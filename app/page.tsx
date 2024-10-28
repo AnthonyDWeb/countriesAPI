@@ -1,12 +1,13 @@
-import styles from "./page.module.css";
+import { Main } from "@/components/Main/main";
+import { Header } from "@/components/Header/header";
+import { Footer } from "@/components/Footer/footer";
 
-export default function Home() {
+export default async function Home() {
 	return (
-		<div className={styles.page}>
-			<main className={styles.main}>
-				<h1>Countries API</h1>
-			</main>
-			<footer className={styles.footer}></footer>
+		<div className="page">
+			<Header />
+			<Main />
+			<Footer />
 		</div>
 	);
 }
