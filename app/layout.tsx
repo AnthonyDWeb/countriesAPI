@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
-});
-const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-});
+// const geistSans = localFont({
+// 	src: "./fonts/GeistVF.woff",
+// 	variable: "--font-geist-sans",
+// 	weight: "100 900",
+// });
+// const geistMono = localFont({
+// 	src: "./fonts/GeistMonoVF.woff",
+// 	variable: "--font-geist-mono",
+// 	weight: "100 900",
+// });
 const Qlassy = localFont({
 	src: "./fonts/Qlassy.ttf",
 	variable: "--Qlassy",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 type RootType = Readonly<{ children: React.ReactNode }>;
 
 export default function RootLayout({ children }: RootType) {
-	const fontStyle = `${geistSans.variable} ${geistMono.variable} ${Qlassy.variable} ${blackCastle.variable} ${DM.variable}`;
+	const fontStyle = `${Qlassy.variable} ${blackCastle.variable} ${DM.variable}`;
 	return (
 		<html lang="en">
 			<body className={fontStyle}>{children}</body>
