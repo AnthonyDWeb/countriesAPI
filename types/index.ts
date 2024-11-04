@@ -1,3 +1,19 @@
+import { ReactElement } from "react";
+
+export type RootType = Readonly<{ children: React.ReactNode }>;
+
+export type NextIntersectionObserverT = Readonly<NextIntersectionObserverI>;
+export interface NextIntersectionObserverI {
+	children: ReactElement;
+	rootmargin: string;
+	thresholdValue: number;
+	classes: string;
+	topIn: string;
+	topOut: string;
+	bottomIn: string;
+	bottomOut: string;
+}
+
 export interface DataType {
 	name: any;
 	capital: [string];
@@ -38,4 +54,10 @@ export interface DataType {
 		googleMaps: string;
 		openStreetMaps: string;
 	};
-};
+}
+
+export interface CardIformations {
+	keyname?: string;
+	value: string | string[] | number;
+	cn?: string;
+}

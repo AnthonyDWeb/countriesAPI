@@ -1,13 +1,14 @@
-import { Main } from "@/components/Main/main";
-import { Header } from "@/components/Header/header";
-import { Footer } from "@/components/Footer/footer";
+import Galery from "@/components/galery";
+import IntersectionContainer from "@/components/Insersection/intersection";
+import { useRef } from "react";
 
 export default async function Home() {
 	return (
 		<div className="page">
-			<Header />
-			<Main />
-			<Footer />
+			<IntersectionContainer animation="bottom">
+				<h1 className="main-title">Countries API</h1>
+			</IntersectionContainer>
+			<Galery />
 		</div>
 	);
 }

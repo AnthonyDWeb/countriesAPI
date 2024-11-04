@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "./logo.png";
 import Link from "next/link";
 import Image from "next/image";
+import logo from "@/assets/logo.png";
 
 export const Header = () => {
 	const d = 1000;
