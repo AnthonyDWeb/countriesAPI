@@ -7,7 +7,6 @@ import { fontStyle } from "@/public/fonts";
 
 export const metadata: Metadata = {
 	title: "Countries API",
-	description: "Countries API application",		
 };
 
 export default function RootLayout({ children }: RootType) {

@@ -25,7 +25,7 @@ const Galery = () => {
 				translations: d.translations,
 				maps: d.maps,
 			};
-			if (data.capital?.includes("Paris")) console.log("data paris", data);
+			// if (data.capital?.includes("Paris")) console.log("data paris", data);
 			dataFiltred.push(data);
 		});
 		setData(dataFiltred);

@@ -5,29 +5,16 @@ import Link from "next/link";
 import React from "react";
 
 export const Card = ({ data }: { data: DataType }) => {
+	const isActive = false;
+	const linkref = isActive ? `/${data.name.common}` : "/";
 	const d = 1000;
 	const flag = data.flags.png;
 
 	const CardInformation = ({ keyname, value, cn }: CardIformations) => {
 		const isName = keyname === "Name";
-		const isLanguage = keyname === "Languages";
-		const languages: [string, any][] =
-			isLanguage && value ? Object.entries(value) : [];
-		if (isLanguage) {
-			console.log(languages);
-		}
-		// : isLanguage ? (
-		// 	<div className={`card-detail ${cn}`}>
-		// 		<p className="card-keyname">{keyname}:</p>
-		// 		<div>
-		// 			{languages.map((l) => (
-		// 				<p className="card-value language">
-		// 					- {l[0]} : {l[1]}
-		// 				</p>
-		// 			))}
-		// 		</div>
-		// 	</div>
-		// )
+		const isLanguage = keyname === "Languages" && value;
+		const languages: [string, any][] = isLanguage ? Object.entries(value) : [];
+
 		return keyname ? (
 			isName ? (
 				<p className={`card-detail ${cn}`}>{value}</p>
@@ -41,10 +28,9 @@ export const Card = ({ data }: { data: DataType }) => {
 			<p className={`card-detail ${cn}`}>({value})</p>
 		);
 	};
-
 	return (
 		<IntersectionContainer animation="bottom">
-			<div className="card">
+			<Link href={linkref} className={`card ${isActive && "pointer"}`}>
 				<div className="card-information-container">
 					<Image className="card-flag" src={flag} width={d} height={d} alt="flag" />
 					<CardInformation keyname="Name" value={data.name.common} cn="title" />
@@ -53,8 +39,7 @@ export const Card = ({ data }: { data: DataType }) => {
 					<CardInformation keyname="Population" value={data.population} />
 					<CardInformation keyname="Region" value={data.region} />
 				</div>
-				{/* <Link className="card-button" href={`/${data.name.common}`}>Voir Plus</Link> */}
-			</div>
+			</Link>
 		</IntersectionContainer>
 	);
 };

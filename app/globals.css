@@ -17,6 +17,7 @@ header {
   padding: 10px;
   border-bottom: 1px solid black;
   box-shadow: 0 2px 10px black;
+  height: 60px;
 
   a {
     margin-left: 10px;
@@ -40,7 +41,7 @@ header {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   width: 100%;
   overflow: hidden;
   font-family: var(--Qlassy);
@@ -75,11 +76,15 @@ main {
       box-shadow: 5px 5px 10px black;
       border: 1px solid rgb(39, 37, 37);
       background-color: rgb(39, 37, 37);
+      cursor: default;
 
-      &:hover {
+      &.pointer {
         cursor: pointer;
+      }
+      &:hover {
         transform: scale(1.075);
         box-shadow: 10px 10px 10px black;
+
 
         .card-detail,
         .card-detail>span {
@@ -154,6 +159,36 @@ main {
       }
     }
   }
+
+  .detail-page {
+    height: calc(100vh - 60px);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .detail-title {
+    font-size: 5vw;
+    text-align: center;
+    font-family: var(--dm);
+    color: white;
+    text-shadow: 8px 5px 2px black;
+  }
+
+  .detail-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 5px 5px 10px black;
+    border: 1px solid rgb(39, 37, 37);
+    background-color: rgb(39, 37, 37);
+  }
+
 }
 
 footer {}
