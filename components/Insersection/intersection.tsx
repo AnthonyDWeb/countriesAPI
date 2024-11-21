@@ -15,7 +15,6 @@ export default function IntersectionContainer({ children, animation, }: Intersec
 	useEffect(() => {
 		const observer = new IntersectionObserver(interSectionCallback, option);
 		if (ref?.current) observer.observe(ref.current);
-		// ref?.current && observer.observe(ref.current);
 	});
 
 	const interSectionCallback = (el: IntersectionObserverEntry[]) =>
