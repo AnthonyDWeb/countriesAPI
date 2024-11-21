@@ -15,21 +15,18 @@ export const Card = ({ data }: { data: DataType }) => {
 		// const isLanguage = keyname === "Languages" && value;
 		// const languages: [string, any][] = isLanguage ? Object.entries(value) : [];
 
-		return keyname ? (
-			isName ? (
-				<p className={`card-detail ${cn}`}>{value}</p>
-			) : (
-				<p className={`card-detail ${cn}`}>
-					<span className="card-keyname">{keyname}:</span>
-					<span className="card-value">{value}</span>
-				</p>
-			)
+		return keyname && !isName ? (
+			<p className={`card-detail ${cn}`}>
+				<span className="card-keyname">{keyname}:</span>
+				<span className="card-value">{value}</span>
+			</p>
 		) : (
-			<p className={`card-detail ${cn}`}>({value})</p>
+			<p className={`card-detail ${cn}`}>{isName ? value : `(${value})`}</p>
 		);
 	};
+	const isDesktop = window.screen.width >= 1024;
 	return (
-		<IntersectionContainer animation="bottom">
+		<IntersectionContainer animation={isDesktop ? "bottom": "fade"}>
 			<Link href={linkref} className={`card ${isActive && "pointer"}`}>
 				<div className="card-information-container">
 					<Image className="card-flag" src={flag} width={d} height={d} alt="flag" />

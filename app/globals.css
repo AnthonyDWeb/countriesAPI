@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: gray;
+  text-decoration: none;
 }
 
 body {
@@ -22,7 +23,6 @@ header {
   a {
     margin-left: 10px;
     font-size: 30px;
-    text-decoration: none;
     color: white;
     font-family: var(--black-castle);
     transition: all 0.3s ease-in-out;
@@ -81,6 +81,7 @@ main {
       &.pointer {
         cursor: pointer;
       }
+
       &:hover {
         transform: scale(1.075);
         box-shadow: 10px 10px 10px black;
@@ -117,12 +118,12 @@ main {
           text-align: center;
           margin-top: 0;
           margin-bottom: 20px;
+          color: rgb(208, 206, 206);
         }
 
         .card-keyname {
-          margin-right: 15px;
-          text-decoration: underline wavy;
-          text-underline-offset: 3px;
+          margin-right: 10px;
+          color: rgb(208, 206, 206);
           transition: all .4s ease-in-out;
         }
 
@@ -165,30 +166,59 @@ main {
     display: grid;
     align-items: center;
     justify-content: center;
+
+    .detail-title {
+      font-size: 5vw;
+      text-align: center;
+      font-family: var(--dm);
+      color: white;
+      text-shadow: 8px 5px 2px black;
+    }
+
+    .detail-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80vw;
+      height: 70vh;
+      border-radius: 5px;
+      padding-bottom: 30px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 5px 5px 10px black;
+      border: 1px solid rgb(39, 37, 37);
+      background-color: rgb(39, 37, 37);
+    }
   }
 
-  .detail-title {
-    font-size: 5vw;
-    text-align: center;
-    font-family: var(--dm);
-    color: white;
-    text-shadow: 8px 5px 2px black;
-  }
-
-  .detail-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80vw;
-    height: 70vh;
-    border-radius: 5px;
-    padding-bottom: 30px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 5px 5px 10px black;
-    border: 1px solid rgb(39, 37, 37);
-    background-color: rgb(39, 37, 37);
-  }
 
 }
 
 footer {}
+
+@media screen and (max-width: 768px) {
+  main {
+    .card-galery {
+      .card {
+        margin: 20px 10px;
+        width: 30vw;
+        min-height: 40vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 445px) {
+  main {
+    .main-title {
+      font-size: 50px;
+    }
+
+    .card-galery {
+      .card {
+        margin: 20px;
+        width: 70vw;
+        min-height: 50vh;
+      }
+    }
+  }
+}
