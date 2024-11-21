@@ -12,8 +12,8 @@ export const Card = ({ data }: { data: DataType }) => {
 
 	const CardInformation = ({ keyname, value, cn }: CardIformations) => {
 		const isName = keyname === "Name";
-		const isLanguage = keyname === "Languages" && value;
-		const languages: [string, any][] = isLanguage ? Object.entries(value) : [];
+		// const isLanguage = keyname === "Languages" && value;
+		// const languages: [string, any][] = isLanguage ? Object.entries(value) : [];
 
 		return keyname ? (
 			isName ? (

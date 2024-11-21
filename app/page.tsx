@@ -1,6 +1,5 @@
 import Galery from "@/components/galery";
 import IntersectionContainer from "@/components/Insersection/intersection";
-import { useRef } from "react";
 
 export default async function Home() {
 	return (
