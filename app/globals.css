@@ -75,7 +75,7 @@ header {
 
       &.show {
         animation: slide-in 0.6s;
-        max-height: calc(99vh - 60px);
+        height: calc(99vh - 60px);
       }
 
       .filter-title {
