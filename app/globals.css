@@ -301,6 +301,7 @@ footer {}
 }
 
 @media screen and (max-width: 768px) {
+
   main {
     .card-galery {
       .card {
@@ -313,6 +314,14 @@ footer {}
 }
 
 @media screen and (max-width: 445px) {
+  header {
+    .filter-container {
+      .filter-menu {
+        width: 45%;
+      }
+    }
+  }
+
   main {
     .main-title {
       font-size: 50px;
