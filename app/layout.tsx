@@ -5,8 +5,6 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { fontStyle } from "@/public/fonts";
 import { CountriesProvider } from "@/context/countries.context";
-import Link from "next/link";
-import favico from "@/assets/globe.svg";
 
 export const metadata: Metadata = {
 	title: "Countries API",
