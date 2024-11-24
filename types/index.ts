@@ -61,3 +61,17 @@ export interface CardIformations {
 	value: string | string[] | number;
 	cn?: string;
 }
+
+export type CountriesProviderTypes = React.FC<{ children: React.ReactNode }>;
+export type CountriesContextType = {
+	regions: string[];
+	setRegions: (regions: string[]) => void;
+	countries: DataType[];
+	setCountries: (countries: DataType[]) => void;
+	countriesSave?: DataType[];
+	setSave?: (countriesSave: DataType[]) => void;
+	selectRef: {
+		current: string;
+	};
+	handleFilter: () => void;
+};
